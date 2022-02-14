@@ -12,7 +12,6 @@ const Reviews = () => {
   useEffect(() => {
     fetchReviews(movieId);
   }, [movieId]);
-  console.log(reviews);
 
   const fetchReviews = async movieId => {
     setIsLoading(true);
