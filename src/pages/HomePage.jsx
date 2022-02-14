@@ -5,6 +5,8 @@ import { getTrending } from '../services/api';
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+    console.log(isLoading);
+
 
   useEffect(() => {
     fetchMovies();

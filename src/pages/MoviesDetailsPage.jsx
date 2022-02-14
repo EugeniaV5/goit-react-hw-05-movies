@@ -12,6 +12,7 @@ const MoviesDetailsPage = () => {
 
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+  console.log(isLoading);
 
   useEffect(() => {
     fetchMovies(movieId);

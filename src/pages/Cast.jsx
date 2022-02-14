@@ -8,6 +8,7 @@ const Cast = () => {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  console.log(isLoading);
 
   useEffect(() => {
     fetchCast(movieId);
