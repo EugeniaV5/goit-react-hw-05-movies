@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 import { ReviewAuthor, ReviewText } from './ReviewItem.styled';
 
 export const ReviewItem = ({ reviews }) => {
@@ -13,4 +15,8 @@ export const ReviewItem = ({ reviews }) => {
       </ul>
     </article>
   );
+};
+
+ReviewItem.propTypes = {
+  reviews: propTypes.arrayOf(propTypes.object).isRequired,
 };

@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 import {
   CardInfoWrapper,
   CardInfo,
@@ -30,4 +32,8 @@ export const MovieCard = ({ movie }) => {
       </CardInfo>
     </CardInfoWrapper>
   );
+};
+
+MovieCard.propTypes = {
+  movie: propTypes.object.isRequired,
 };

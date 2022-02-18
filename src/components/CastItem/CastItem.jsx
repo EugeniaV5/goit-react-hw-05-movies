@@ -1,3 +1,5 @@
+import propTypes from 'prop-types';
+
 import noImage from '../../images/noImage.jpg';
 import { CastWrapper, StyledCastItem } from './CastItem.styled';
 
@@ -23,4 +25,8 @@ export const CastItem = ({ casts }) => {
       </CastWrapper>
     </article>
   );
+};
+
+CastItem.propTypes = {
+  casts: propTypes.arrayOf(propTypes.object).isRequired,
 };
