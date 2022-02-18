@@ -9,7 +9,6 @@ const Cast = () => {
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
 
   useEffect(() => {
     fetchCast(movieId);
@@ -38,7 +37,11 @@ const Cast = () => {
           />
         </div>
       )}
-      <div>{casts && <CastItem casts={casts} />}</div>
+      {casts.length !== 0 ? (
+        <CastItem casts={casts} />
+      ) : (
+        <p>No information found</p>
+      )}
     </div>
   );
 };

@@ -1,10 +1,17 @@
+import { lazy } from 'react';
+
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AppBar from './AppBar/AppBar';
-import HomePage from 'pages/HomePage';
-import MoviesPage from 'pages/MoviesPage';
-import MoviesDetailsPage from 'pages/MoviesDetailsPage';
-import Cast from 'pages/Cast';
-import Reviews from 'pages/Reviews';
+
+const createChunk = componentName => {
+  return lazy(() => import(`../pages/${componentName}`));
+};
+
+const HomePage = createChunk('HomePage');
+const MoviesPage = createChunk('MoviesPage');
+const MoviesDetailsPage = createChunk('MoviesDetailsPage');
+const Cast = createChunk('Cast');
+const Reviews = createChunk('Reviews');
 
 export const App = () => {
   return (

@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 import { Outlet } from 'react-router-dom';
 import { Toaster } from 'react-hot-toast';
 
@@ -9,7 +11,9 @@ const AppBar = () => {
       <header>
         <Navigation />
       </header>
-      <Outlet />
+      <Suspense fallback="">
+        <Outlet />
+      </Suspense>{' '}
       <div>
         <Toaster />
       </div>

@@ -9,7 +9,6 @@ const Reviews = () => {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
 
   useEffect(() => {
     fetchReviews(movieId);

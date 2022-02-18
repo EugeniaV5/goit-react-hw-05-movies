@@ -14,12 +14,10 @@ const MoviesDetailsPage = () => {
 
   const [movie, setMovie] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
 
   useEffect(() => {
     fetchMovies(movieId);
   }, [movieId]);
-  console.log(movie);
 
   const fetchMovies = async movieId => {
     setIsLoading(true);

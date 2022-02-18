@@ -9,7 +9,6 @@ import { MoviesList } from '../components/MoviesList/MoviesList';
 const MoviesPage = () => {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
 
   // const location = useLocation();
   const [searchParams, setSearchParams] = useSearchParams();
