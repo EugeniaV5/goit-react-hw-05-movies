@@ -1,11 +1,12 @@
 import noImage from '../../images/noImage.jpg';
+import { CastWrapper, StyledCastItem } from './CastItem.styled';
 
 export const CastItem = ({ casts }) => {
   return (
     <article>
-      <ul>
+      <CastWrapper>
         {casts.map(cast => (
-          <li key={cast.id}>
+          <StyledCastItem key={cast.id}>
             {cast.profile_path ? (
               <img
                 src={`https://image.tmdb.org/t/p/w185${cast.profile_path}`}
@@ -17,9 +18,9 @@ export const CastItem = ({ casts }) => {
 
             <p>{cast.name}</p>
             <p>{cast.character}</p>
-          </li>
+          </StyledCastItem>
         ))}
-      </ul>
+      </CastWrapper>
     </article>
   );
 };

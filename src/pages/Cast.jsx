@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Circles } from 'react-loader-spinner';
 
 import { getMovieCredits } from '../services/api';
 import { CastItem } from '../components/CastItem/CastItem';
@@ -25,7 +26,21 @@ const Cast = () => {
       setIsLoading(false);
     }
   };
-  return <div>{casts && <CastItem casts={casts} />}</div>;
+  return (
+    <div>
+      {isLoading && (
+        <div className="Loader">
+          <Circles
+            color="#f07416"
+            arialLabel="loading-indicator"
+            height={80}
+            width={80}
+          />
+        </div>
+      )}
+      <div>{casts && <CastItem casts={casts} />}</div>
+    </div>
+  );
 };
 
 export default Cast;

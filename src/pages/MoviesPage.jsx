@@ -1,6 +1,8 @@
 import { SearchBar } from '../components/SearchBar/SearchBar';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Circles } from 'react-loader-spinner';
+
 import { getMoviesByQuery } from '../services/api';
 import { MoviesList } from '../components/MoviesList/MoviesList';
 
@@ -37,6 +39,16 @@ const MoviesPage = () => {
   return (
     <div>
       <SearchBar onSubmit={handleSubmit} />
+      {isLoading && (
+        <div className="Loader">
+          <Circles
+            color="#f07416"
+            arialLabel="loading-indicator"
+            height={80}
+            width={80}
+          />
+        </div>
+      )}
       <MoviesList movies={movies} />
     </div>
   );

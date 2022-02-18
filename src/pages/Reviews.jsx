@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Circles } from 'react-loader-spinner';
 
 import { getMovieReviews } from '../services/api';
 import { ReviewItem } from '../components/ReviewItem/ReviewItem';
@@ -27,6 +28,16 @@ const Reviews = () => {
   };
   return (
     <div>
+      {isLoading && (
+        <div className="Loader">
+          <Circles
+            color="#f07416"
+            arialLabel="loading-indicator"
+            height={80}
+            width={80}
+          />
+        </div>
+      )}
       {reviews.length !== 0 ? (
         <ReviewItem reviews={reviews} />
       ) : (
